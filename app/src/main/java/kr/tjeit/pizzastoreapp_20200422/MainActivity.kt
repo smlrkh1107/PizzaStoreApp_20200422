@@ -1,5 +1,6 @@
 package kr.tjeit.pizzastoreapp_20200422
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,16 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+
+            val clickedStoreData = pizzaStores.get(position)
+
+            val myIntent = Intent(mContext, StoreDetailActivity::class.java)
+            myIntent.putExtra("storeData", clickedStoreData)
+            startActivity(myIntent)
+
+        }
 
     }
 
