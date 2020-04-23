@@ -24,7 +24,7 @@ class StoreDetailActivity : BaseActivity() {
     override fun setValues() {
 
         storeData = intent.getSerializableExtra("storeData") as Store
-
+        //
         storeNameTxt.text = storeData.name
         storePhonTxt.text = storeData.phoneNum
 
